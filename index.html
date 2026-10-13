@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediSaathi AI</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="#">
+        <span class="brand-icon">✚</span>
+        <span>MediSaathi <span class="mint">AI</span>
+          <small>Your health companion</small>
+        </span>
+      </a>
+
+      <p class="nav-label">WORKSPACE</p>
+      <button class="nav-item active" data-target="overview">▦ Overview</button>
+      <button class="nav-item" data-target="reports">▤ Medical Reports</button>
+      <button class="nav-item" data-target="timeline">◷ Health Timeline</button>
+
+      <div class="sidebar-note">
+        <span class="dot"></span> Your health, simplified.
+        <p>Understand your health records in simpler language.</p>
+      </div>
+      <p class="sidebar-footer">MEDISAATHI AI · DEMO</p>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL HEALTH SPACE</p>
+          <h1>Good health starts with understanding.</h1>
+        </div>
+        <div class="avatar">M</div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-content">
+          <span class="pill">✦ YOUR HEALTH DASHBOARD</span>
+          <h2>Healthcare, made<br><span>easier to understand.</span></h2>
+          <p>Organise your medical documents and explore your health information in one place.</p>
+          <button class="primary-btn" data-target="reports">＋ Add a medical report</button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit"></div>
+          <div class="medical-cross">✚</div>
+          <div class="float-card">♡ Health, simplified</div>
+        </div>
+      </section>
+
+      <section class="stats" id="overview">
+        <article class="stat-card">
+          <span class="stat-icon">▤</span>
+          <p>Medical documents</p>
+          <h3 id="documentCount">02</h3>
+          <small>Sample demo records</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon">◷</span>
+          <p>Timeline entries</p>
+          <h3>02</h3>
+          <small>Example health events</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon">✳</span>
+          <p>Health insights</p>
+          <h3>Ready</h3>
+          <small>AI connection not added yet</small>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel" id="reports">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">YOUR RECORDS</p>
+              <h2>Medical reports</h2>
+            </div>
+            <span class="tag">DEMO DATA</span>
+          </div>
+          <p class="muted">Keep your documents organised in one place.</p>
+
+          <label class="upload-zone" for="fileInput">
+            <span class="upload-icon">↑</span>
+            <strong>Choose a medical document</strong>
+            <span>PDF, JPG or PNG · Maximum 10 MB</span>
+            <span class="choose-btn">Choose file</span>
+          </label>
+          <input id="fileInput" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" hidden>
+          <p id="uploadMessage" class="message" aria-live="polite">Demo only: files are not uploaded or analysed.</p>
+          
+<div id="readerPanel" class="reader-panel" hidden>
+  <h3>PDF Report Reader / रिपोर्ट रीडर</h3>
+
+  <p id="readerStatus" aria-live="polite">
+    Select a PDF to begin. / शुरू करने के लिए PDF चुनें।
+  </p>
+  <button type="button" id="extractBtn" class="primary-btn">
+    Extract text / टेक्स्ट निकालें
+  </button>
+
+  <label for="pdfText">Extracted text / निकाला गया टेक्स्ट</label>
+  <textarea
+    id="pdfText"
+    rows="10"
+    placeholder="Extracted PDF text will appear here..."
+    readonly
+  ></textarea>
+</div>
+
+           
+          <div class="report-row">
+            <div class="file-icon">PDF</div>
+            <div class="report-info">
+              <strong>Sample blood report</strong>
+              <small>Example record · Not real patient data</small>
+            </div>
+            <span class="tag">SAMPLE</span>
+          </div>
+          <div class="report-row">
+            <div class="file-icon image-file">IMG</div>
+            <div class="report-info">
+              <strong>Sample prescription</strong>
+              <small>Example record · Not real patient data</small>
+            </div>
+            <span class="tag">SAMPLE</span>
+          </div>
+        </article>
+
+        <article class="panel" id="timeline">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">YOUR JOURNEY</p>
+              <h2>Health timeline</h2>
+            </div>
+            <span class="timeline-icon">◷</span>
+          </div>
+          <p class="muted">Example of how health events could appear.</p>
+
+          <div class="timeline-entry">
+            <span class="timeline-dot"></span>
+            <div>
+              <small>EXAMPLE EVENT</small>
+              <strong>Blood test record</strong>
+              <p>Sample entry for a future timeline.</p>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <span class="timeline-dot"></span>
+            <div>
+              <small>EXAMPLE EVENT</small>
+              <strong>Prescription record</strong>
+              <p>Sample entry for a future timeline.</p>
+            </div>
+          </div>
+
+          <div class="privacy-note">
+            <span>ⓘ</span>
+            <p><strong>Privacy first</strong><br>This demo does not send files to a server.</p>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        <span>✚ MediSaathi AI</span>
+        <span>Prototype · Health information made easier to understand</span>
+      </footer>
+      <p class="disclaimer">This prototype does not provide diagnoses or treatment recommendations. Always discuss medical reports with a qualified healthcare professional.</p>
+   
+      
+      </p>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+.vscode/
+.DS_Store
+Thumbs.db
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.webp

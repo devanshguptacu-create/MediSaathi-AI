@@ -433,3 +433,53 @@ button:focus-visible, a:focus-visible, .upload-zone:focus-within {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; }
 }
+
+/* Supabase demo records section layout fix */
+#database-demo {
+  position: relative;
+  clear: both;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 32px 0;
+  padding: 24px;
+  color: #e8fff7;
+  background: #0d211c;
+  border: 1px solid #24483d;
+  border-radius: 16px;
+  overflow-wrap: anywhere;
+}
+
+#database-demo h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+#demo-records {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+#demo-records article {
+  min-width: 0;
+  padding: 18px;
+  background: #132e26;
+  border: 1px solid #315849;
+  border-radius: 12px;
+}
+
+#demo-records article h3 {
+  margin-top: 0;
+  color: #7ce6c0;
+}
+
+#demo-records article p {
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+#database-status {
+  color: #7ce6c0;
+}

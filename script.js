@@ -142,3 +142,64 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+/* MediSaathi AI — Supabase demo records */
+const SUPABASE_URL = "https://aqeolnpixzmgwgizlllf.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_yM6YnJnICU02QWgQgGKybg_5hH0bxSG";
+
+async function loadDemoRecords() {
+  const status = document.getElementById("database-status");
+  const list = document.getElementById("demo-records");
+
+  if (!status || !list) return;
+
+  status.textContent = "Connecting to demo database...";
+
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/demo_records?select=id,title,category,description,created_at&order=created_at.desc`,
+      {
+        headers: {
+          apikey: SUPABASE_PUBLISHABLE_KEY,
+          
+             Authorization: `Bearer ${sb_publishable_yM6YnJnICU02QWgQgGKybg_5hH0bxSG}`
+
+         
+        }
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Database request failed (${response.status})`);
+    }
+
+    const records = await response.json();
+    list.replaceChildren();
+
+    if (records.length === 0) {
+      status.textContent = "No demo records available.";
+      return;
+    }
+
+    records.forEach((record) => {
+      const card = document.createElement("article");
+      const title = document.createElement("h3");
+      const category = document.createElement("p");
+      const description = document.createElement("p");
+
+      title.textContent = record.title;
+      category.textContent = record.category;
+      description.textContent = record.description || "";
+
+      card.append(title, category, description);
+      list.appendChild(card);
+    });
+
+    status.textContent = `Loaded ${records.length} demo records.`;
+  } catch (error) {
+    console.error("Supabase demo records error:", error);
+    status.textContent =
+      "Could not load demo records. Check the database settings.";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadDemoRecords);
